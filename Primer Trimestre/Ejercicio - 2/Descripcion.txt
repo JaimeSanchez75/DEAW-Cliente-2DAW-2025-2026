@@ -1,0 +1,6 @@
+===============// Segundo ejercicio con JavaScript //==============
+
+Fecha: Viernes 19 de Septiembre 2025
+
+//Info//
+Ejercicio en el que trabajamos con imágenes, siguiendo un patrón de 2 estados, y de 4, con eventos de "click".

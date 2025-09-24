@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Cambiar Imagen</title>
+</head>
+<style>
+    img
+    {
+        min-width: 800px;
+        min-height: 800px;
+        max-width: 800px;
+        max-height: 800px;
+    }
+</style>
+<body>
+    <h1>¡Hola! Clica en la imágen para ver qué sucede.</h1>
+    <h3>*Imagen en 2 estados*</h3>
+    <img id="img1" src="img/gato1.png">
+    <script>
+        let cambia1=true;
+        let imagen1=document.querySelector('#img1');
+
+        imagen1.addEventListener('click',cambiaImagen1)
+
+        function cambiaImagen1()
+        {
+            if (cambia1)
+            {
+                imagen1.src="img/gato2.png"
+            }
+            else
+            {
+                imagen1.src="img/gato1.png"
+            }
+            cambia1=!cambia1;
+        }
+    </script>
+    <h1>Ahora clica en esta unas cuantas veces.</h1>
+    <h3>*Imagen en 4 estados*</h3>
+    <img id='img2' src="img/hiena.png">
+    <script>
+        let cambia2=true;
+        let i=0;
+        let imagen2=document.querySelector('#img2');
+
+        imagen2.addEventListener('click',cambiaImagen2)
+
+        function cambiaImagen2()
+        {
+            if (i==0)
+            {
+                imagen2.src="img/hiena.png"
+                i++;
+            }
+            else if (i==1)
+            {
+                imagen2.src="img/leon.png"
+                i++;
+            }
+             else if (i==2)
+            {
+                imagen2.src="img/hipo.png"
+                i++;
+            }
+             else if (i==3)
+            {
+                imagen2.src="img/cebra.png"
+                i=0;
+            }
+            
+            
+           
+        }
+    </script>
+
+</body>
+</html>

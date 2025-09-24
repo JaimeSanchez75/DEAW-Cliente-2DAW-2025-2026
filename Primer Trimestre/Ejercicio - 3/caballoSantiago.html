@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test | Ejercicio 3</title>
+</head>
+<body>
+    <h1 id="frase1">
+        ¿De qué color es el caballo blanco de Santiago?
+    </h1>
+    <button id="verde">Blanco</button> <button id="rojo">Negro</button>
+
+    <h1 id="frase2">
+        ¿Cuánto es 2 + 2?
+    </h1>
+    <button id="blanco">Blanco</button> <button id="negro">Negro</button>
+    <script>
+        let frase1=document.querySelector('#frase1');
+        let frase2=document.querySelector('#frase2');
+        let frase3=document.querySelector('#frase1');
+        let frase4=document.querySelector('#frase1');
+        let frase5=document.querySelector('#frase1');
+        
+        let verdadero=document.querySelector('#verde');
+        let falso=document.querySelector('#rojo');
+
+        verdadero1.addEventListener('click',cambiaColorTexto1);
+        falso1.addEventListener('click',cambiaColorTexto2);
+
+        verdadero2.addEventListener('click',cambiaColorTexto1);
+        falso2.addEventListener('click',cambiaColorTexto2);
+
+        function cambiaColorTexto1(id)
+        {
+            
+            document.getElementById(id).style.color="green";
+            
+        }
+        function cambiaColorTexto2(id)
+        {
+            document.getElementById(id).style.color="red";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+===============// Primera toma de contacto con Java Script //==============
+
+Fecha: Miercoles 17 de Septiembre 2025
+
+//Info//
+
+Ejercicio inicial con Java Script en el cual con el uso de un botón cambia el contenido del texto, modificandolo por "Párrafo cambiado" y un contador de veces.
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primera práctica con JavaScript
+
+    </title>
+</head>
+<body>
+    <div>
+        <h1>Hola mundo</h1>
+            <script>
+                //alert('saludo desde la clase');
+                console.log('Hola desde la consola.')
+                let i=0;
+            </script>
+        <h2>Esto es un titulo 2</h2>
+            <script>
+                //alert('Esto se muestra después');
+                let h2=document.querySelector('h2');
+                h2.textContent="Hola otra vez.";
+                h2.style.color="#0000FF";
+            </script>
+        <p id="prueba">Esto es una prueba</p>
+        <button onclick="i++;document.getElementById('prueba').innerHTML='Párrafo cambiado. '+i;">¡Púlsame!</button>
+       <!-- <script></script> -->
+    </div>
+</body>
+</html>

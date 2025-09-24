@@ -1,0 +1,7 @@
+===============// Tercer ejercicio con JavaScript //==============
+
+Fecha: Martes 23 de Septiembre 2025
+
+//Info//
+
+Ejercicio con botones en el que el texto de la pregunta cambia de color según si la respuesta es correcta o incorrecta.
