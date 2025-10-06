@@ -1,0 +1,27 @@
+<script>
+    let user = prompt("¿Quién eres?");
+    if (user=="Administrador") 
+    {
+        let pass=prompt("¿Contraseña?");
+        if (pass=="ElMejor") 
+        {
+            alert("Bienvenido!");
+        } 
+        else if (pass==null || pass=="") 
+        {
+            alert("Cancelado");
+        } 
+        else 
+        {
+            alert("Contraseña incorrecta.");
+        }
+    }
+    else if (user==null || user=="") 
+    {
+        alert("Cancelado");
+    } 
+    else 
+    {
+        alert("Usuario incorrecto.");
+    }
+</script>

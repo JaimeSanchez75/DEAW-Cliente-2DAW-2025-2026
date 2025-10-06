@@ -1,0 +1,7 @@
+===============// Tercer ejercicio con JavaScript //==============
+
+Fecha: Lunes 06 de Octubre 2025
+
+//Info//
+
+Ejercicio de verificación de usuario y contraseña con alert.
