@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Calculadora</title>
+</head>
+<body>
+    <script>
+        let calculadora= {
+            num1:NaN,
+            num2:NaN,
+
+            read(){
+                this.num1= +prompt("Elige un primer numero: ");
+                this.num2= +prompt("Elige un segundo numero: ");
+            },
+            sum(){
+                
+                return this.num1+this.num2;
+            },
+            mul(){
+                return this.num1*this.num2;
+            },
+
+        };
+
+        calculadora.read()
+        alert(calculadora.sum());
+        alert(calculadora.mul());
+    </script>
+</body>
+</html>

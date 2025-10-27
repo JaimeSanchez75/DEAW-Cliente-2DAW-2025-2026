@@ -1,0 +1,7 @@
+===============// Tercer ejercicio con JavaScript //==============
+
+Fecha: Martes 07 de Octubre 2025
+
+//Info//
+
+Ejercicio en el que pide números mayores de 100, un bucle que solo sale del bucle si el usuario decide cancelar o ingresa un numero mayor a 100.

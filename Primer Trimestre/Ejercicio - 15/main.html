@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+</head>
+<body>
+    <script>
+            function Acumulador(inicio)
+            {
+                this.value= +inicio;
+
+                this.read= function(){ this.value += +prompt("num: ", 0);}
+            }
+            let acumulador=new Acumulador(1);
+            
+            acumulador.read();
+            
+            acumulador.read();
+            alert(acumulador.value);
+    </script>
+</body>
+</html>

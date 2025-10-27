@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+</head>
+<body>
+        <script>
+            function Calculadora(){
+        
+            let num1=NaN;
+            let num2=NaN;
+
+            this.read=()=>{this.num1= +prompt("Elige un primer numero: "); this.num2= +prompt("Elige un segundo numero: ");} 
+            this.sum=()=>{return this.num1+this.num2;}
+            this.mul=()=>{return this.num1*this.num2;}
+        };
+
+        let calculadora= new Calculadora();
+
+        calculadora.read();
+        alert("Suma: "+ calculadora.sum());
+        alert("Multiplicacion: " + calculadora.mul());
+       
+        </script>
+</body>
+</html>

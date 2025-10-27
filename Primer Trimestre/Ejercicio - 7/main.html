@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresión de datos limitado.</title>
+</head>
+<body>
+    <h2>¡Ingresa un número mayor de 100!</h2>
+
+    <p>Tu número ha sido... </p>
+    <script>
+        let respuesta;
+        do
+        {
+            respuesta=prompt("Ingresa un número mayor a 100: ");
+            if(+respuesta>100)
+            {
+                document.write(+respuesta);
+            }
+            if (+respuesta<=100 && respuesta!="" && respuesta!==null )
+            {
+                alert("El número es menor o igual a 100, intenta de nuevo con uno superior.");
+            }
+            
+            if(isNaN(respuesta))
+            {
+                alert("Eso no es un número, intenta de nuevo.");
+            }
+        }
+        while(isNaN(respuesta)||(+respuesta<=100))
+    </script>
+</body>
+</html>

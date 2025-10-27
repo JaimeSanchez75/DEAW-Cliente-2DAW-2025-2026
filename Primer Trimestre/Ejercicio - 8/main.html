@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio sobre Números Primos</title>
+</head>
+<body>
+    <h2>Los números primos desde el 1 al 100 son...</h2>
+    <script>
+        "use strict";
+
+        let n=100;
+        let numPrimos = 0;
+        for (let i = 2; i <= n; i++) 
+        {
+            let esPrimo = true;
+            for (let j = 2; j <= Math.sqrt(i)&&esPrimo; j++) 
+            {
+                if (i % j === 0) 
+                {
+                    esPrimo = false;
+                    break;
+                }
+            }
+            if (esPrimo) 
+            {
+                document.write(i + "<br>");
+                numPrimos++;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let salarios={
+            Jhon: 100,
+            Ann:160,
+            Pete: 130.
+        }
+        
+        function sumarSalarios (objeto)
+        {
+            let suma= 0;
+            for (let variable in objeto)
+            {
+                suma += objeto[variable];
+            }
+            return  suma;
+        }
+        console.log("Salarios en total: "+ sumarSalarios(salarios));
+
+
+
+        let menu= {
+            width: 200,
+            height: 300,
+            title: "Mi menu",
+        }
+
+        function duplicarNumero(objeto)
+        {
+            for (let parametro in objeto)
+            {   
+                if(typeof(objeto[parametro])==typeof(1))
+                {
+                    objeto[parametro]=objeto[parametro]*2;
+                }
+            }
+        }
+        console.log(menu);
+        duplicarNumero(menu)
+        console.log(menu);
+    </script>
+</body>
+</html>

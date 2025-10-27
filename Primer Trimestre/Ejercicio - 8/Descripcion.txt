@@ -1,0 +1,7 @@
+===============// Tercer ejercicio con JavaScript //==============
+
+Fecha: Miércoles 08 de Octubre 2025
+
+//Info//
+
+Comprobación de números primos de diferentes formas.

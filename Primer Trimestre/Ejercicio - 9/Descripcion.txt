@@ -1,0 +1,7 @@
+===============// Tercer ejercicio con JavaScript //==============
+
+Fecha: Viernes 10 de Octubre 2025
+
+//Info//
+
+Ejercicios del Tema 2 con bucles.

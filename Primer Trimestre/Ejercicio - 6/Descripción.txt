@@ -1,0 +1,7 @@
+===============// Tercer ejercicio con JavaScript //==============
+
+Fecha: Martes 07 de Octubre 2025
+
+//Info//
+
+Ejercicio de bucles en el que iteramos una comprobación de si el número es par, empezando desde el -10 hasta el 10.
