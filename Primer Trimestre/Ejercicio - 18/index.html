@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de lectura de números</title>
+</head>
+<body>
+    <h1>Mira el console log!</h1>
+    <script>
+        function readNumbers() {
+            while (true) {
+                let input = prompt("Ingresa un número válido."
+                );
+
+                if (input === null || input.trim() === "") {
+                    console.log("Operación abortada.");
+                    return null;
+                }
+
+                let numero = Number(input);
+
+                if (Number.isFinite(numero)) {
+                    console.log("El número ha sido: " + numero);
+                    return numero;
+                } else {
+                    console.error("Número inválido.");
+                }
+            }
+        }
+        function random(min,max)
+        {
+            return (Math.random()*(max-min))+min;
+        }
+        //let numero = readNumbers();
+        let numero= random(1,5);
+        alert(numero);
+    </script>
+</body>
+</html>

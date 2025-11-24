@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<title>Ejercicio Camelizer</title>
+</head>
+<body>
+    <div class="container my-4 bg-light gap-3">
+
+    <!-- EJERCICIO 1 -->
+    <form class="needs-validation  " novalidate id="form1">
+        <div class="input-group justify-content-center mb-2">
+            <button class="btn btn-primary" type="submit">Ejercicio 1: Camelizer ( Púlsame )</button>
+        <input class="form-control w-50" type="text" id="frase1" placeholder="Pon tu frase" required>
+        <div class="invalid-feedback">Debes escribir una frase.</div>
+        </div>
+        <p id="contenido-ejercicio-1"></p>
+    </form>
+    <form class="needs-validation  " novalidate id="form2">
+        <div class="input-group justify-content-center mb-2">
+            <button class="btn btn-primary" type="submit">Ejercicio 2: Filter range (Púlsame)</button>
+        <input class="form-control w-25" type="text" id="frase2" placeholder="Pon una lista de números, ejemplo: 2,8,1,2,23,54..." required>
+        <input class="form-control w-25" type="number" id="min" placeholder="Mínimo" required>
+        <input class="form-control w-25" type="number" id="max" placeholder="Máximo" required>
+        
+        <div class="invalid-feedback">Debes escribir una lista.</div>
+        </div>
+        <p id="contenido-ejercicio-2"></p>
+    </form>
+    </div>
+    <script>
+        "use strict";
+        const speed = 50;
+
+
+        const form1 = document.getElementById('form1');
+        const form2 = document.getElementById('form2');
+
+        form1.addEventListener('submit', function(event) 
+        {
+            event.preventDefault(); 
+
+            // Validación de Bootstrap
+            if (!form1.checkValidity()) {
+                event.stopPropagation();
+                form1.classList.add('was-validated');
+                return;
+            }
+
+            // Si es válido, limpiar clase y mostrar resultado
+            form1.classList.remove('was-validated');
+
+            const input = document.getElementById("frase1");
+            const output = document.getElementById("contenido-ejercicio-1");
+            let txt = camelize(input.value);
+            input.value = "";
+            output.innerHTML = "";
+
+            let i = 0;
+            function write() 
+            {
+                if (i < txt.length) 
+                {
+                    output.innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(write, speed);
+                }
+            }
+            write();
+        });
+        form2.addEventListener('submit', function(event) 
+        {
+            event.preventDefault(); 
+
+            // Validación de Bootstrap
+            if (!form2.checkValidity()) 
+            {
+                event.stopPropagation();
+                form2.classList.add('was-validated');
+                return;
+            }
+
+            // Si es válido, limpiar clase y mostrar resultado
+            form2.classList.remove('was-validated');
+
+            const input = document.getElementById("frase2");
+            const min = document.getElementById("min");
+            const max = document.getElementById("max");
+            const output = document.getElementById("contenido-ejercicio-2");
+            let txt = filter_range(input.value,min.value,max.value);
+            input.value = "";
+            output.innerHTML = "";
+
+            let i = 0;
+            function write() 
+            {
+                if (i < txt.length) 
+                {
+                    output.innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(write, speed);
+                }
+            }
+            write();
+        });
+
+        // Función Ej 1, Camelize
+        function camelize(str) 
+        {
+            let cadena = "";
+            let array = str.split('-').value;
+            let posArray = 0;
+            array.forEach(s => 
+            {
+                if (posArray === 0) 
+                {
+                    if (s !== "") cadena += s.toLowerCase();
+                } else 
+                {
+                    if (s !== "") cadena += s[0].toUpperCase() + s.slice(1).toLowerCase();
+                }
+                if (s !== "") posArray++;
+            });
+            return cadena;
+        }
+        // Función Ej 2, Filter range
+        function filter_range(string,min,max)
+        {
+            let array=string.split(", ");
+            
+            return arr.filter(array => (min <= item && item <= max));
+        }
+    </script>
+</body>
+</html>

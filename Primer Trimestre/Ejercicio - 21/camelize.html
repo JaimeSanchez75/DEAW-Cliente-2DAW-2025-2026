@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        function camelize( str )
+        {
+            let cadena="";
+            let array =  str.split('-');
+            let posArray=0;
+            array.forEach(str => 
+            {
+                if(posArray==0)
+                { cadena= cadena+str.toLowerCase()}
+                else
+                {
+                    console.log(str);
+                    cadena= cadena+str[0].toUpperCase()+str.slice(1).toLowerCase();
+                }
+                posArray++;
+            });
+            return cadena;
+        }
+        console.log(camelize("AAAAA-QUE-MIEDO-YO-ME-VOY-SUSTO-O-MIEDO-O-SUSTO-TAMBIEN"));
+    </script>
+</body>
+</html>

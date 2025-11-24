@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicios con Arrays</title>
+</head>
+<body>
+<script>
+function camelizar(txt) 
+{
+    let partes = txt.split('-');
+    for (let i = 1; i < partes.length; i++) 
+    {
+        partes[i] = partes[i][0].toUpperCase() + partes[i].slice(1);
+    }
+    let res = "";
+    for (let i = 0; i < partes.length; i++) res += partes[i];
+    return res;
+}
+console.log("Ejercicio 1: ")
+console.log(camelizar("hola-buenas-tardes"));
+
+function rangoFiltrado(arr, min, max) 
+{
+    let res = [];
+    for (let i = 0; i < arr.length; i++) 
+    {
+        if (arr[i] >= min && arr[i] <= max) res.push(arr[i]);
+    }
+    return res;
+}
+let arr = [12, 5, 2, 4, 8, 1];
+console.log("Ejercicio 2: ")
+console.log(rangoFiltrado(arr, 1, 4));
+
+function rangoEnSitio(arr, min, max) {
+    for (let i = 0; i < arr.length; i++) 
+    {
+        if (arr[i] < min || arr[i] > max) { arr.splice(i, 1); i--; }
+    }
+}
+let arr2 = [12, 4, 5, 2, 3, 1, 5, 25, 42, 1];
+rangoEnSitio(arr2, 1, 4);
+console.log("Ejercicio 3: ")
+console.log(arr2);
+
+let arr3 = [5, 2, 5, 12, 63, -12, 1, -10, 8];
+for (let i = 0; i < arr3.length; i++) 
+{
+    for (let j = i+1; j < arr3.length; j++) 
+    {
+        if (arr3[i] < arr3[j]) 
+        {
+            let tmp = arr3[i]; arr3[i] = arr3[j]; arr3[j] = tmp;
+        }
+    }
+}
+console.log("Ejercicio 4:")
+console.log(arr3);
+
+function copiaOrdenada(arr) 
+{
+    let res = [];
+    for (let i = 0; i < arr.length; i++) res.push(arr[i]);
+    for (let i = 0; i < res.length; i++) 
+    {
+        for (let j = i+1; j < res.length; j++) 
+        {
+            if (res[i] > res[j]) 
+            {
+                let tmp = res[i]; res[i] = res[j]; res[j] = tmp;
+            }
+        }
+    }
+    return res;
+}
+let arr4 = ["HTML", "JavaScript", "CSS"];
+let ord = copiaOrdenada(arr4);
+console.log("Ejercicio 5:")
+console.log(ord);
+console.log(arr4);
+
+function Calculadora() 
+{
+    this.ops = {"+": function(a,b){return a+b;}, "-": function(a,b){return a-b;}};
+    this.calcular = function(txt) 
+    {
+        let partes = txt.split(' ');
+        let a = parseFloat(partes[0]);
+        let b = parseFloat(partes[2]);
+        let op = partes[1];
+        if (this.ops[op] && !isNaN(a) && !isNaN(b)) return this.ops[op](a,b);
+        return NaN;
+    }
+}
+let calc = new Calculadora();
+console.log("Ejercicio 6:")
+console.log(calc.calcular("3 + 7"));
+console.log(calc.calcular("3 - 7"));
+
+let ju = {nombre:"John", edad:25};
+let pe = {nombre:"Pete", edad:30};
+let ma = {nombre:"Mary", edad:28};
+let us = [ju, pe, ma];
+let nombres = [];
+for (let i = 0; i < us.length; i++) nombres.push(us[i].nombre);
+console.log("Ejercicio 7");
+console.log(nombres);
+
+ju = {nombre:"John", ape:"Smith", id:1};
+pe = {nombre:"Pete", ape:"Hunt", id:2};
+ma = {nombre:"Mary", ape:"Key", id:3};
+us = [ju, pe, ma];
+let usMap = [];
+for (let i = 0; i < us.length; i++) 
+{
+    usMap.push({fullName: us[i].nombre + " " + us[i].ape, id: us[i].id});
+}
+console.log("Ejercicio 8");
+console.log(usMap[0].id);
+console.log(usMap[0].fullName);
+
+function ordenarEdad(arr) 
+{
+    for (let i = 0; i < arr.length; i++) 
+    {
+        for (let j = i+1; j < arr.length; j++) 
+        {
+            if (arr[i].edad > arr[j].edad) 
+            {
+                let tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+            }
+        }
+    }
+}
+ju = {nombre:"John", edad:25};
+pe = {nombre:"Pete", edad:30};
+ma = {nombre:"Mary", edad:28};
+arr = [pe, ju, ma];
+ordenarEdad(arr);
+console.log("Ejercicio 9");
+for (let i = 0; i < arr.length; i++) console.log(arr[i].nombre + " " + arr[i].edad);
+
+function mezclar(arr) 
+{
+    for (let i = 0; i < arr.length; i++) 
+    {
+        let j = Math.floor(Math.random() * arr.length);
+        let tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp;
+    }
+}
+arr = [1,2,3];
+mezclar(arr);
+console.log("Ejercicio 10");
+console.log(arr);
+
+function promedioEdad(us) 
+{
+    let suma = 0;
+    for (let i = 0; i < us.length; i++) suma += us[i].edad;
+    return suma / us.length;
+}
+ju = {nombre:"John", edad:25};
+pe = {nombre:"Pete", edad:30};
+ma = {nombre:"Mary", edad:29};
+arr = [ju, pe, ma];
+console.log("Ejercicio 11");
+console.log(promedioEdad(arr));
+
+function unico(arr) 
+{
+    let res = [];
+    for (let i = 0; i < arr.length; i++) 
+    {
+        let existe = false;
+        for (let j = 0; j < res.length; j++) if (res[j] === arr[i]) existe = true;
+        if (!existe) res.push(arr[i]);
+    }
+    return res;
+}
+let strs = ["Hare","Krishna","Hare","Krishna","Krishna","Krishna","Hare","Hare",":-O"];
+console.log("Ejercicio 12");
+console.log(unico(strs));
+
+function agruparPorId(arr) 
+{
+    let res = {};
+    for (let i = 0; i < arr.length; i++) res[arr[i].id] = arr[i];
+    return res;
+}
+us = [
+    {id:'john', nombre:"John Smith", edad:20},
+    {id:'ann', nombre:"Ann Smith", edad:24},
+    {id:'pete', nombre:"Pete Peterson", edad:31},
+];
+let usPorId = agruparPorId(us);
+console.log("Ejercicio 13");
+console.log(usPorId);
+</script>
+</body>
+</html>

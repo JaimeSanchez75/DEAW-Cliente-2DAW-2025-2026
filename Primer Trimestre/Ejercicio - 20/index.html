@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        /*
+        function truncate(str, maxlength) 
+        {
+            return (str.length > maxlength) ?
+            str.slice(0, maxlength - 1) + '…' : str;
+        }
+        console.log(truncate("What I'd like to tell on this topic is:", 20) == "What I'd like to te…")
+
+        console.log(truncate("Hi everyone!", 20) == "Hi everyone!")
+        */
+       /*function sliceDinero(str)
+       {
+            return Number.parseInt(str.slice(1));
+       }
+       console.log(sliceDinero("$34220AE"));
+       */
+      let styles =["Jazz","Blues"];
+      console.log(styles);
+
+      //styles.push("Rock-n-Roll");
+      styles[2]="Rock-n-Roll";
+      console.log(styles);
+
+      if (styles.length%2)
+      {styles[styles.length/2]="Classics"}
+      else
+      {styles[(styles.length+1)/2]="Classics"}
+      console.log(styles);
+    </script>
+</body>
+</html>
