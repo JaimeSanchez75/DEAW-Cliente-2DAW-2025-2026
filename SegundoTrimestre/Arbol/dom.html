@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Árbol con DOM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    ul { list-style-type: none; padding-left: 1rem; }
+    li { margin: 0.3rem 0; }
+    li::before { content: "🌿 "; }
+  </style>
+</head>
+<body class="p-4">
+
+  <h1 class="mb-3">Árbol usando DOM</h1>
+  <div id="container"></div>
+     <button class="btn btn-primary mb-3"><a href="index.html" class="text-white text-decoration-none">Volver</a></button>
+  <script>
+    let data = {
+      "Fish": { "trout": {}, "salmon": {} },
+      "Tree": {
+        "Huge": { "sequoia": {}, "oak": {} },
+        "Flowering": { "apple tree": {}, "magnolia": {} }
+      }
+    };
+
+    function createTreeDOM(obj) {
+      if (Object.keys(obj).length === 0) return null;
+
+      let ul = document.createElement('ul');
+      ul.classList.add('list-group');
+
+      for (let key in obj) {
+        let li = document.createElement('li');
+        li.textContent = key;
+        li.classList.add('border', 'rounded', 'p-1', 'mb-1');
+
+        let children = createTreeDOM(obj[key]);
+        if (children) li.append(children);
+
+        ul.append(li);
+      }
+      return ul;
+    }
+
+    let container = document.getElementById('container');
+    container.append(createTreeDOM(data));
+  </script>
+</body>
+</html>
