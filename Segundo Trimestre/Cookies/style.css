@@ -1,0 +1,15 @@
+body.claro 
+{
+    background-color: #f8f9fa;
+    color: #212529;
+}
+body.oscuro 
+{
+    background-color: #212529;
+    color: white;
+}
+.card.oscuro 
+{
+    background-color: #343a40;
+    color: white;
+}
