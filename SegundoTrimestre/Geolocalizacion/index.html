@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Geolocalización con Historial</title>
+  <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .buttons button 
+        {
+            margin-right: 10px;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        #history 
+        {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        #history li 
+        {
+            background: #f0f0f0;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+            border-left: 4px solid #4CAF50;
+        }
+  </style>
+</head>
+<body>
+  <button><a href="../index.html">Volver</a></button>
+  <h1>Geolocalización con Historial</h1>
+
+  <div class="buttons">
+    <button id="startBtn">Iniciar geolocalización</button>
+    <button id="stopBtn">Detener geolocalización</button>
+    <button id="clearBtn">Eliminar historial</button>
+  </div>
+
+  <h2>Historial de posiciones</h2>
+  <ul id="history"></ul>
+
+  <script>
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const historyList = document.getElementById('history');
+
+    let watchId = null;
+
+    function addPosition(position) 
+    {
+        const { latitude, longitude } = position.coords;
+        const timestamp = new Date().toLocaleString();
+        const item = { latitude, longitude, timestamp };
+
+        // Guardar en localStorage
+        let history = JSON.parse(localStorage.getItem('geoHistory')) || [];
+        history.push(item);
+        localStorage.setItem('geoHistory', JSON.stringify(history));
+
+        // Añadir a la página
+        const li = document.createElement('li');
+        li.textContent = `Lat: ${latitude}, Lon: ${longitude}, Hora: ${timestamp}`;
+        historyList.appendChild(li);
+    }
+    function loadHistory() 
+    {
+        const history = JSON.parse(localStorage.getItem('geoHistory')) || [];
+        historyList.innerHTML = '';
+        history.forEach(item => 
+        {
+            const li = document.createElement('li');
+            li.textContent = `Lat: ${item.latitude}, Lon: ${item.longitude}, Hora: ${item.timestamp}`;
+            historyList.appendChild(li);
+        });
+    }
+    startBtn.addEventListener('click', () => 
+    {
+        if (!navigator.geolocation) 
+        {
+            alert('Tu navegador no soporta geolocalización.');
+            return;
+        }
+        if (watchId !== null) return; 
+        watchId = navigator.geolocation.watchPosition(
+            addPosition,
+            error => alert('Error al obtener la posición: ' + error.message),
+            { enableHighAccuracy: true, maximumAge: 0, timeout: 5000 }
+        );
+    });
+    stopBtn.addEventListener('click', () => 
+    {
+        if (watchId !== null) 
+        {
+            navigator.geolocation.clearWatch(watchId);
+            watchId = null;
+        }
+    });
+    clearBtn.addEventListener('click', () => 
+    {
+        localStorage.removeItem('geoHistory');
+        historyList.innerHTML = '';
+    });
+    loadHistory();
+  </script>
+</body>
+</html>
