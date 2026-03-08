@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla Ordenable</title>
+  <style>
+    table 
+    {
+      border-collapse: collapse;
+      width: 400px;
+    }
+    th, td 
+    {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+      cursor: pointer;
+    }
+    th.sorted-asc::after {content: " ▲";}
+    th.sorted-desc::after {content: " ▼";}
+  </style>
+</head>
+<body>
+<button ><a href="../index.html">Volver</a></button>
+<h2>Tabla Ordenable</h2>
+<table id="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Edad</th>
+      <th>Ciudad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Juan</td><td>25</td><td>Madrid</td></tr>
+    <tr><td>Ana</td><td>30</td><td>Barcelona</td></tr>
+    <tr><td>Pedro</td><td>20</td><td>Valencia</td></tr>
+    <tr><td>Lucía</td><td>28</td><td>Sevilla</td></tr>
+  </tbody>
+</table>
+
+<script>
+  const table = document.getElementById('table');
+  let sortDir = 1; 
+  let sortedColumn = null;
+
+
+  table.querySelector('thead').addEventListener('click', (event) => {
+    const th = event.target.closest('th');
+    if (!th) return;
+
+    const thIndex = Array.from(th.parentNode.children).indexOf(th);
+
+    if (sortedColumn === thIndex) {sortDir *= -1;} 
+    else 
+    {
+      sortDir = 1;
+      sortedColumn = thIndex;
+    }
+
+    
+    table.querySelectorAll('th').forEach(header => {header.classList.remove('sorted-asc', 'sorted-desc');});
+    th.classList.add(sortDir === 1 ? 'sorted-asc' : 'sorted-desc');
+
+    const tbody = table.querySelector('tbody');
+    const rows = Array.from(tbody.rows);
+
+    rows.sort((rowA, rowB) => 
+    {
+      const cellA = rowA.cells[thIndex].innerText;
+      const cellB = rowB.cells[thIndex].innerText;
+
+      
+      const numA = parseFloat(cellA);
+      const numB = parseFloat(cellB);
+      if (!isNaN(numA) && !isNaN(numB)) {return (numA - numB) * sortDir;} 
+      else {return cellA.localeCompare(cellB) * sortDir;}
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+  });
+</script>
+
+</body>
+</html>
