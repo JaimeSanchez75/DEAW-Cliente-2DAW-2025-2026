@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Lista de Tareas | TODO List</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts para tipografía limpia -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <button class=" volver btn btn-light border-primary rounded-pill  py-3 float-start z-index-3" onclick="window.location.href='./../'">
+        <i class="bi bi-arrow-left"></i> Volver
+    </button>
+    <header>
+      <h1>Lista de Tareas</h1>
+      <p>Organiza tus tareas, establece plazos y guarda tu progreso</p>
+    </header>
+
+    <!-- Formulario para añadir tarea -->
+    <form id="task-form" class="task-form align-items-center mb-4 justify-content-center d-flex" autocomplete="off">
+      <div class="form-group">
+        <input type="text" id="task-input" placeholder="Ej: Revisar documentación, Hacer ejercicio..." autocomplete="off">
+        <small>Descripción obligatoria</small>
+      </div>
+      <div class="form-group">
+        <input type="datetime-local" id="deadline-input">
+        <small>Fecha límite (opcional)</small>
+      </div>
+      <button type="submit" class="btn btn-light border-primary  rounded-pill btn-sm ">+ Añadir tarea</button>
+    </form>
+
+    <div class="columns">
+      <!-- Tareas pendientes -->
+      <section class="task-section">
+        <h2>⏳ Pendientes <span id="pending-count" class="badge">0</span></h2>
+        <ul id="pending-tasks" class="task-list"></ul>
+      </section>
+
+      <!-- Tareas completadas -->
+      <section class="task-section">
+        <h2>✅ Completadas <span id="completed-count" class="badge">0</span></h2>
+        <ul id="completed-tasks" class="task-list completed-list"></ul>
+        <button id="clear-completed" class="btn-secondary">🗑️ Eliminar todas completadas</button>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

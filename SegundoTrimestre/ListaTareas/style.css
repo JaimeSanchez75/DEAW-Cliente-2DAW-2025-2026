@@ -1,0 +1,231 @@
+* 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body 
+{
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(145deg, #e9f0f5 0%, #d9e2ec 100%);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  color: #1e2a3a;
+}
+.container 
+{
+  max-width: 1300px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px);
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+}
+header {text-align: center; margin-bottom: 2rem;}
+header h1 
+{
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #2c5f8a, #1b3b4f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+header p {color: #4a627a; font-weight: 400;}
+/* Formulario */
+.task-form 
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: #fefefe;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+.form-group {flex: 1; min-width: 180px;}
+.form-group input 
+{
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+  background: white;
+}
+.form-group input:focus 
+{
+  outline: none;
+  border-color: #2c7da0;
+  box-shadow: 0 0 0 3px rgba(44, 125, 160, 0.2);
+}
+.form-group small 
+{
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  color: #5e7a93;
+  margin-left: 0.8rem;
+}
+
+
+/* Columnas */
+.columns 
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.task-section 
+{
+  flex: 1;
+  min-width: 280px;
+  background: #ffffffcc;
+  border-radius: 1.5rem;
+  padding: 1.2rem;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.task-section h2 
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  border-bottom: 3px solid #cbd5e1;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.badge 
+{
+  background: #2c7da0;
+  color: white;
+  border-radius: 40px;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.task-list 
+{
+  list-style: none;
+  margin-bottom: 1.2rem;
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+.task-item 
+{
+  background: white;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+  border-left: 5px solid #2c7da0;
+}
+.task-item.completed 
+{
+  border-left-color: #4caf7f;
+  opacity: 0.85;
+  background: #f5fbf7;
+}
+.task-info {margin-bottom: 0.5rem;}
+.task-description 
+{
+  font-weight: 600;
+  font-size: 1rem;
+  word-break: break-word;
+}
+.task-deadline 
+{
+  font-size: 0.75rem;
+  color: #e67e22;
+  display: inline-block;
+  background: #fff1e0;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  margin-top: 0.3rem;
+}
+.task-completion-date 
+{
+  font-size: 0.7rem;
+  color: #2e7d64;
+  background: #e0f2e9;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  margin-top: 0.3rem;
+}
+.task-actions 
+{
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+.btn-icon 
+{
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  transition: 0.1s;
+  font-weight: 500;
+}
+.btn-complete 
+{
+  background: #4caf7f;
+  color: white;
+}
+.btn-complete:hover 
+{
+  background: #2e7d64;
+  transform: scale(0.98);
+}
+.btn-delete 
+{
+  background: #e26d5c;
+  color: white;
+}
+.btn-delete:hover {background: #b54332;}
+.btn-secondary {
+  background: #7c8ea0;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 0.5rem;
+  transition: 0.2s;
+}
+.btn-secondary:hover {background: #5c6e82;}
+.task-list::-webkit-scrollbar {width: 6px;}
+.task-list::-webkit-scrollbar-track 
+{
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+.task-list::-webkit-scrollbar-thumb 
+{
+  background: #2c7da0;
+  border-radius: 10px;
+}
+.volver
+{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+@media (max-width: 750px) 
+{
+  .container {padding: 1rem;}
+  .task-form {flex-direction: column;}
+  .btn-primary {justify-content: center; padding: 0.8rem;}
+}
