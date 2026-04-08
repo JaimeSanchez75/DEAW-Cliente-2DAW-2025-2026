@@ -1,0 +1,28 @@
+.btn-green
+{
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.2s;
+    border: yellow solid 2px;
+    box-shadow: black 0px 0px 5px;
+}
+.btn-brown
+{
+    background-color: #F0E2C0;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.2s;
+    border: #E2C28B solid 2px;
+    box-shadow: black 0px 0px 5px;
+}
+.btn-blue
+{
+    background: radial-gradient(circle at 30% 20%, #1a3f5c, #0a1a2e);
+    color: rgb(255, 255, 255);
+    border: 2px solid #4a9eff;
+    font-weight: bold;
+    border-radius: 30px;
+}

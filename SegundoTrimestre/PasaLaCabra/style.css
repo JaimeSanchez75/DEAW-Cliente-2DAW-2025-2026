@@ -1,0 +1,103 @@
+body 
+{
+    background: linear-gradient(145deg, #0a1a2e, #07121f);
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Courier New', monospace;
+}
+.bomb-card 
+{
+    background: #11212e;
+    border-radius: 50px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.6), inset 0 0 10px rgba(0,160,255,0.2);
+    border: 1px solid #2c6e9e;
+    padding: 25px;
+}
+.bomb-canvas 
+{
+    background: radial-gradient(circle at 30% 20%, #1a3f5c, #0a1a2e);
+    border-radius: 100%;
+    padding: 10px;
+    box-shadow: 0 0 0 4px #1e5a88, 0 0 0 8px #0a2a3a;
+    cursor: pointer;
+}
+canvas 
+{
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.timer-text 
+{
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 3rem;
+    letter-spacing: 5px;
+    text-shadow: 0 0 8px #00aaff;
+    color: #88ccff;
+}
+.btn-option 
+{
+    border-radius: 60px;
+    font-weight: bold;
+    transition: all 0.1s;
+    margin: 6px;
+    background: #1e3a5f;
+    border: 2px solid #4a9eff;
+    color: #cceeff;
+}
+.btn-option:hover:not(:disabled) 
+{
+    background: #2a6ea5;
+    color: white;
+    transform: scale(1.02);
+    border-color: #88ccff;
+}
+.correct-feedback 
+{
+    background-color: #1e7e34 !important;
+    border-color: #1e7e34 !important;
+    color: white !important;
+}
+.wrong-feedback 
+{
+    background-color: #8b2c2c !important;
+    border-color: #8b2c2c !important;
+    color: white !important;
+}
+footer {color: #6c9ebf;}
+.btn-outline-warning 
+{
+    color: #6c9ebf;
+    border-color: #2c6e9e;
+}
+.btn-outline-warning:hover 
+{
+    background: #2c6e9e;
+    color: white;
+}
+.volver
+{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: radial-gradient(circle at 30% 20%, #1a3f5c, #0a1a2e);
+    color: rgb(255, 255, 255);
+    border: 2px solid #4a9eff;
+    font-weight: bold;
+    border-radius: 30px;
+}
+.volver:hover
+{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #2c6e9e;
+    color: rgb(255, 255, 255);
+    border: 2px solid #4a9eff;
+    font-weight: bold;
+    border-radius: 30px;
+}
+@keyframes blink 
+{
+    50% { opacity: 0.4; text-shadow: 0 0 15px #00aaff; }
+}

@@ -1,0 +1,83 @@
+body {
+            background: linear-gradient(135deg, #f9e7b3, #f5c68a);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .tamagotchi-card {
+            background: #fffaec;
+            border-radius: 60px 60px 40px 40px;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+            border: 2px solid #e0a800;
+            padding: 25px;
+        }
+        .canvas-container {
+            background: #f0e2c0;
+            border-radius: 30px;
+            padding: 15px;
+            display: inline-block;
+            box-shadow: inset 0 0 0 4px #e2c28b, 0 10px 20px rgba(0,0,0,0.1);
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            image-rendering: pixelated;
+        }
+        .stat-label {
+            font-weight: bold;
+            color: #7b4a2e;
+        }
+        .progress {
+            height: 25px;
+            border-radius: 30px;
+            background-color: #eeddbb;
+        }
+        .progress-bar {
+            border-radius: 30px;
+            transition: width 0.3s ease;
+            font-weight: bold;
+            line-height: 25px;
+        }
+        .btn-action {
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        .btn-action:active {
+            transform: scale(0.96);
+        }
+        .log-list {
+            background: #fef3d6;
+            border-radius: 25px;
+            padding: 10px;
+            max-height: 180px;
+            overflow-y: auto;
+            font-size: 0.85rem;
+        }
+        .log-list li {
+            padding: 5px 10px;
+            border-bottom: 1px solid #e7cfa1;
+            color: #4a2e1e;
+        }
+        footer {
+            font-size: 0.75rem;
+            color: #7b4a2e;
+        }
+        .volver
+        {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            
+        }
+        .volver 
+        {
+            background: #F0E2C0;
+            color: black;
+            border: #E2C28B solid 2px;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: all 0.2s;
+        }
